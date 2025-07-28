@@ -5,7 +5,7 @@ function Leaderboard() {
   const [entries, setEntries] = useState([]);
 
   useEffect(() => {
-    fetch('https://scaling-space-bassoon-g9g7xgrgjg63ww-8000.app.github.dev/api/leaderboard/')
+    fetch(`${process.env.REACT_APP_API_BASE_URL}/api/leaderboard/`)
       .then(res => res.json())
       .then(data => setEntries(data));
   }, []);

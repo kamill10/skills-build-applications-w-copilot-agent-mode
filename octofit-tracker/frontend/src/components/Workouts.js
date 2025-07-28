@@ -5,7 +5,7 @@ function Workouts() {
   const [workouts, setWorkouts] = useState([]);
 
   useEffect(() => {
-    fetch('https://scaling-space-bassoon-g9g7xgrgjg63ww-8000.app.github.dev/api/workouts/')
+    fetch(`${process.env.REACT_APP_API_BASE_URL}/api/workouts/`)
       .then(res => res.json())
       .then(data => setWorkouts(data));
   }, []);

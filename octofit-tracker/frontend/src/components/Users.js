@@ -5,7 +5,7 @@ function Users() {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    fetch('https://scaling-space-bassoon-g9g7xgrgjg63ww-8000.app.github.dev/api/users/')
+    fetch(`${process.env.REACT_APP_API_BASE_URL}/api/users/`)
       .then(res => res.json())
       .then(data => setUsers(data));
   }, []);

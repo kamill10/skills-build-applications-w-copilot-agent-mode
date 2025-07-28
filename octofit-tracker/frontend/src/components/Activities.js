@@ -5,7 +5,7 @@ function Activities() {
   const [activities, setActivities] = useState([]);
 
   useEffect(() => {
-    fetch('https://scaling-space-bassoon-g9g7xgrgjg63ww-8000.app.github.dev/api/activities/')
+    fetch(`${process.env.REACT_APP_API_BASE_URL}/api/activities/`)
       .then(res => res.json())
       .then(data => setActivities(data));
   }, []);

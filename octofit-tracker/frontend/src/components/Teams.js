@@ -5,7 +5,7 @@ function Teams() {
   const [teams, setTeams] = useState([]);
 
   useEffect(() => {
-    fetch('https://scaling-space-bassoon-g9g7xgrgjg63ww-8000.app.github.dev/api/teams/')
+    fetch(`${process.env.REACT_APP_API_BASE_URL}/api/teams/`)
       .then(res => res.json())
       .then(data => setTeams(data));
   }, []);
