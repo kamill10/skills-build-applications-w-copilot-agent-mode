@@ -25,7 +25,11 @@ SECRET_KEY = "django-insecure-02u+ybtlu@yc7or_f+d=iw_mbkdhf83_2-&^o0%!)!(v1)qra#
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = [
+    'localhost',
+    '127.0.0.1',
+    'scaling-space-bassoon-g9g7xgrgjg63ww-8000.app.github.dev',
+]
 
 
 # Application definition
@@ -56,12 +60,17 @@ MIDDLEWARE = [
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+# https://docs.djangoproject.com/en/4.1/ref/settings/#databases
+
 DATABASES = {
     'default': {
         'ENGINE': 'djongo',
         'NAME': 'octofit_db',
-        'HOST': 'localhost',
-        'PORT': 27017,
+        'ENFORCE_SCHEMA': False,
+        'CLIENT': {
+            'host': 'localhost',
+            'port': 27017,
+        }
     }
 }
 # CORS settings
@@ -91,15 +100,7 @@ TEMPLATES = [
 WSGI_APPLICATION = "octofit_tracker.wsgi.application"
 
 
-# Database
-# https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
-    }
-}
 
 
 # Password validation

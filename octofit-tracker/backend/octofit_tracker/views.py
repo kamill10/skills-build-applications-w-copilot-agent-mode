@@ -9,13 +9,14 @@ def api_root(request, format=None):
     if request.method == 'POST':
         return Response({"message": "POST request received"}, status=status.HTTP_201_CREATED)
 
-    base_url = 'http://localhost:8000/'
+    # Replace with your Codespace name or use localhost for local testing
+    codespace_url = 'https://[REPLACE-THIS-WITH-YOUR-CODESPACE-NAME]-8000.app.github.dev/'
     return Response({
-        'users': base_url + 'api/users/?format=api',
-        'teams': base_url + 'api/teams/?format=api',
-        'activities': base_url + 'api/activities/?format=api',
-        'leaderboard': base_url + 'api/leaderboard/?format=api',
-        'workouts': base_url + 'api/workouts/?format=api'
+        'users': codespace_url + 'api/users/?format=api',
+        'teams': codespace_url + 'api/teams/?format=api',
+        'activities': codespace_url + 'api/activities/?format=api',
+        'leaderboard': codespace_url + 'api/leaderboard/?format=api',
+        'workouts': codespace_url + 'api/workouts/?format=api'
     })
 
 class UserViewSet(viewsets.ModelViewSet):
